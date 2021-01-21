@@ -1353,25 +1353,25 @@ footer {
 	Contact page
 -----------------------*/
 
-.contact-form {
+.donate-form {
 	padding-right: 35px;
 }
 
-.contact-form h5 {
+.donate-form h5 {
 	font-size: 16px;
 	font-family: "Lato", sans-serif;
 }
 
-.contact-form h5 span {
+.donate-form h5 span {
 	color: #16d0c5;
 }
 
-.contact-form .form-group {
+.donate-form .form-group {
 	position: relative;
 	margin-bottom: 20px;
 }
 
-.contact-form .form-group span {
+.donate-form .form-group span {
 	position: absolute;
 	right: 0;
 	top: 10px;
@@ -1383,16 +1383,16 @@ footer {
 	transition: all 0.3s;
 }
 
-.contact-form .form-group span.active {
+.donate-form .form-group span.active {
 	opacity: 1;
 }
 
-.contact-form .check-form {
+.donate-form .check-form {
 	padding-right: 20px;
 }
 
-.contact-form input,
-.contact-form textarea {
+.donate-form input,
+.donate-form textarea {
 	width: 100%;
 	height: 50px;
 	border: none;
@@ -1402,18 +1402,18 @@ footer {
 	color: #20509e;
 }
 
-.contact-form input:focus,
-.contact-form textarea:focus {
+.donate-form input:focus,
+.donate-form textarea:focus {
 	border-color: #20509e;
 }
 
-.contact-form textarea {
+.donate-form textarea {
 	padding-bottom: 10px;
 	padding-top: 10px;
 	height: 115px;
 }
 
-.contact-form .contact-type .ct-label {
+.donate-form .contact-type .ct-label {
 	display: inline-block;
 	position: relative;
 	padding-left: 20px;
@@ -1428,18 +1428,18 @@ footer {
 	user-select: none;
 }
 
-.contact-form .contact-type .ct-label input {
+.donate-form .contact-type .ct-label input {
 	position: absolute;
 	opacity: 0;
 	cursor: pointer;
 }
 
-.contact-form .contact-type .ct-label input:checked~.checkmark:after {
+.donate-form .contact-type .ct-label input:checked~.checkmark:after {
 	content: '\f111';
 	color: #16d0c5;
 }
 
-.contact-form .contact-type .ct-label .checkmark {
+.donate-form .contact-type .ct-label .checkmark {
 	position: absolute;
 	top: 3px;
 	left: 0;
@@ -1447,30 +1447,30 @@ footer {
 	width: 25px;
 }
 
-.contact-form .contact-type .ct-label .checkmark:after {
+.donate-form .contact-type .ct-label .checkmark:after {
 	position: absolute;
 	content: "\f10c";
 	font-family: 'FontAwesome';
 	font-size: 14px;
 }
 
-.contact-form .contact-type .ct-label:last-child {
+.donate-form .contact-type .ct-label:last-child {
 	margin-right: 0;
 }
 
-.contact-form ::-webkit-input-placeholder {
+.donate-form ::-webkit-input-placeholder {
 	color: #acb9cc;
 }
 
-.contact-form :-ms-input-placeholder {
+.donate-form :-ms-input-placeholder {
 	color: #acb9cc;
 }
 
-.contact-form ::-ms-input-placeholder {
+.donate-form ::-ms-input-placeholder {
 	color: #acb9cc;
 }
 
-.contact-form ::placeholder {
+.donate-form ::placeholder {
 	color: #acb9cc;
 }
 
