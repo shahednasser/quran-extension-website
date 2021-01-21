@@ -70,14 +70,14 @@ form.addEventListener('submit', function(event) {
     }
 
     var button = $("#tap-btn");
-    button.props('disabled', true);
+    button.prop('disabled', true);
 
     tap.createToken(card).then(function(result) {
         console.log(result);
         if (result.error) {
             // Inform the user if there was an error
             errorElement.textContent = result.error.message;
-            button.props('disabled', false);
+            button.prop('disabled', false);
         } else {
             // Send the token to your server
             
@@ -88,7 +88,7 @@ form.addEventListener('submit', function(event) {
               } else {
                 errorElement.textContent = response.error;
               }
-              button.props('disabled', false);
+              button.prop('disabled', false);
             });
         }
     });
