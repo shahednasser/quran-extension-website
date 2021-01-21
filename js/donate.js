@@ -57,6 +57,7 @@ form.addEventListener('submit', function(event) {
 
     //validate amount
     var errorElement = document.getElementById('error-handler');
+    var successElement = document.getElementById('success');
     var amountElm = $(form).find("input[name=amount]");
     if (!amountElm.length) {
         errorElement.textContent = "Please enter an amount";
@@ -68,27 +69,27 @@ form.addEventListener('submit', function(event) {
         return;
     }
 
+    var button = $("#tap-btn");
+    button.props('disabled', true);
+
     tap.createToken(card).then(function(result) {
         console.log(result);
         if (result.error) {
             // Inform the user if there was an error
             errorElement.textContent = result.error.message;
+            button.props('disabled', false);
         } else {
             // Send the token to your server
-            var errorElement = document.getElementById('success');
-            errorElement.style.display = "block";
-            var tokenElement = document.getElementById('token');
-            tokenElement.textContent = result.id;
-            // Insert the token ID into the form so it gets submitted to the server
-            var form = document.getElementById('payment-form');
-            var hiddenInput = document.createElement('input');
-            hiddenInput.setAttribute('type', 'hidden');
-            hiddenInput.setAttribute('name', 'tapToken');
-            hiddenInput.setAttribute('value', token.id);
-            form.appendChild(hiddenInput);
-
-            // Submit the form
-            //form.submit();
+            
+            $.post('https://quran-extension-api.alwaysdata.net/donate', {amount: amountVal, tapToken: result.id}, function (response) {
+              console.log(response);
+              if (response.success) {
+                successElement.textContent = 'Thank you for your donation!';
+              } else {
+                errorElement.textContent = response.error;
+              }
+              button.props('disabled', false);
+            });
         }
     });
 });
