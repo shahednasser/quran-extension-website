@@ -3,6 +3,14 @@ var tap = Tapjsli('pk_test_pahBWFfY6rkU4ZIitP8EQOGm');
 
 var elements = tap.elements({});
 
+if (window.location.href.indexOf('tap_id=chg_') !== -1) {
+  Swal.fire({
+    title: 'Thank you!',
+    text: 'Thank you for your donation!',
+    icon: 'success'
+  });
+}
+
 var style = {
   base: {
     color: '#535353',
