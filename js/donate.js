@@ -56,7 +56,17 @@ form.addEventListener('submit', function(event) {
     event.preventDefault();
 
     //validate amount
-
+    var errorElement = document.getElementById('error-handler');
+    var amountElm = $(form).find("input[name=amount]");
+    if (!amountElm.length) {
+        errorElement.textContent = "Please enter an amount";
+        return;
+    }
+    var amountVal = amountElm.val();
+    if (isNaN(amountVal) || parseFloat(amountVal) < 0) {
+        errorElement.textContent = "Please enter an amount greater than 0";
+        return;
+    }
 
     tap.createToken(card).then(function(result) {
         console.log(result);
