@@ -1,4 +1,3 @@
-//pass your public key from tap's dashboard
 var tap = Tapjsli('pk_test_pahBWFfY6rkU4ZIitP8EQOGm');
 
 var elements = tap.elements({});
@@ -92,12 +91,20 @@ form.addEventListener('submit', function(event) {
             $.post('https://quran-extension-api.alwaysdata.net/donate', {amount: amountVal, tapToken: result.id}, function (response) {
               console.log(response);
               if (response.success) {
-                $(successElement).text('Thank you for your donation!');
+                Swal.fire({
+                  title: 'Thank you!',
+                  text: 'Thank you for your donation!',
+                  icon: 'success'
+                });              
               } else {
                 if (response.redirect_to) {
                   window.location.href = response.redirect_to;
                 } else {
-                  errorElement.textContent = response.message;
+                  Swal.fire({
+                    title: 'Error!',
+                    text: response.message,
+                    icon: 'error'
+                  });
                 }
               }
               button.prop('disabled', false);
