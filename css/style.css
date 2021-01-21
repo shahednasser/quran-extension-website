@@ -1357,6 +1357,13 @@ footer {
 	padding-right: 35px;
 }
 
+.donate-form #tap-btn[disabled],
+.donate-form #tap-btn:disabled {
+	pointer-events: none;
+    cursor: not-allowed;
+    opacity: .5;
+}
+
 .donate-form h5 {
 	font-size: 16px;
 	font-family: "Lato", sans-serif;
