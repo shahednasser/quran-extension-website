@@ -84,9 +84,13 @@ form.addEventListener('submit', function(event) {
             $.post('https://quran-extension-api.alwaysdata.net/donate', {amount: amountVal, tapToken: result.id}, function (response) {
               console.log(response);
               if (response.success) {
-                successElement.textContent = 'Thank you for your donation!';
+                $(successElement).text('Thank you for your donation!');
               } else {
-                errorElement.textContent = response.error;
+                if (response.redirect_to) {
+                  window.location.href = response.redirect_to;
+                } else {
+                  errorElement.textContent = response.message;
+                }
               }
               button.prop('disabled', false);
             });
