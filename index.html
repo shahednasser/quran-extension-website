@@ -26,6 +26,9 @@
 	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
 
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.4/bluebird.min.js"></script>
+	<script src="https://secure.gosell.io/js/sdk/tap.min.js"></script>
+
 </head>
 <body>
 	<!-- Page Preloder -->
@@ -161,56 +164,16 @@
 				<h4>Help us keep working and improving this extension! Any donation is appreciated.</h4>
 				<div class="row">
 					<div class="col-lg-7">
-						<form class="contact-form">
-							<div class="row">
-								<div class="col-md-6">
-									<div class="form-group">
-										<input class="check-form" type="text" placeholder="First Name*:">
-										<span><i class="ti-check"></i></span>
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="form-group">
-										<input class="check-form" type="text" placeholder="Last Name*:">
-										<span><i class="ti-check"></i></span>
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="form-group">
-										<input class="check-form" type="text" placeholder="Email Adress*:">
-										<span><i class="ti-check"></i></span>
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="form-group">
-										<input class="check-form" type="text" placeholder="Phone Number*:">
-										<span><i class="ti-check"></i></span>
-									</div>
-								</div>
-								<div class="col-md-12">
-									<div class="form-group">
-										<textarea placeholder="Tell us about your question!"></textarea>
-									</div>
-									<h5 class="mb-3">Way to Contacts<span>*</span>:</h5>
-									<div class="contact-type">
-										<label class="ct-label">Phone
-											<input type="radio" name="radio">
-											 <span class="checkmark"></span>
-										</label>
-										<label class="ct-label">Email
-											<input type="radio" name="radio">
-											 <span class="checkmark"></span>
-										</label>
-										<label class="ct-label">Other
-											<input type="radio" name="radio">
-											 <span class="checkmark"></span>
-										</label>
-									</div>
-	
-									<button class="site-btn sb-gradients mt-4">Submit form</button>
-								</div>
+						<form id="form-container" method="post" action="/charge">
+							<!-- Tap element will be here -->
+							<div id="element-container"></div>
+							<div id="error-handler" role="alert"></div>
+							<div id="success" style=" display: none;;position: relative;float: left;">
+								  Success! Your token is <span id="token"></span>
 							</div>
-						</form>
+							<!-- Tap pay button -->
+							<button id="tap-btn">Submit</button>
+						  </form>
 					</div>
 				</div>
 			</div>
@@ -236,5 +199,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> <a hr
 	<script src="js/jquery-3.2.1.min.js"></script>
 	<script src="js/owl.carousel.min.js"></script>
 	<script src="js/main.js"></script>
+	<script src="js/donate.js"></script>
 </body>
 </html>
