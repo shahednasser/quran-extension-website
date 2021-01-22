@@ -626,10 +626,6 @@ footer {
     width: 80%;
   }
 
-  .hero-text .site-btn:first-of-type {
-    margin-bottom: 10px;
-  }
-
   .hero-text h2 {
     font-size: 45px;
   }
@@ -667,6 +663,10 @@ footer {
     display: block;
     cursor: pointer;
     padding-right: 10px;
+  }
+
+  .hero-text .site-btn:first-of-type {
+    margin-bottom: 10px;
   }
 
   .main-menu {
