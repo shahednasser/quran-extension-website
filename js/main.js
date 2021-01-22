@@ -1,11 +1,3 @@
-/* =================================
-------------------------------------
-	Cryptocurrency - Landing Page Template
-	Version: 1.0
- ------------------------------------ 
- ====================================*/
-
-
 'use strict';
 
 
@@ -19,6 +11,18 @@ $(window).on('load', function() {
 });
 
 (function($) {
+	/*------------------
+		Scrolling
+	--------------------*/
+	var header = $(".header-section"),
+		body = $("body");
+	$("body").on('scroll', function() {
+		if (body.scrollTop() > 0) {
+			header.addClass("scrolling");
+		} else {
+			header.removeClass("scrolling");
+		}
+	});
 
 	/*------------------
 		Navigation
